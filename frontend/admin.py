@@ -6,12 +6,12 @@ from .models import carousel, card_promotion, feature
 class carouselAdmin(admin.ModelAdmin):
     list_display = ('id','title','carousel', 'create_date',)
 
-def image_thumb(self):
-    return '<img src="/media/%s" width="100" height="100" />' % (self.photo)
-image_thumb.allow_tags = True
+def __str__(self):
+    return self.title
+
 
 class cardAdmin(admin.ModelAdmin):
-    licst_display = ('id', 'title', 'description', 'card_img', 'careate_date')
+    list_display = ('id', 'title', 'description', 'card_img', 'create_date')
 
 def __str__(self):
     return self.title

@@ -7,12 +7,11 @@ def index(request):
     # function
     today = datetime.now()
     img_slide = carousel.objects.all()
-    return render(request, 'frontend/index.html', {'today':today, 'carousel':img_slide})
+    post = card_promotion.objects.all()
+    return render(request, 'frontend/index.html', {'today':today, 'carousel':img_slide, 'card_promotion':post})
 
-def card(request):
-    today = datetime.now()
-    data = card_promotion.objects.all()
-    cdt = {
-       'card_promotion':data
-    }
-    return render(request, 'includes/card.html', cdt, {'today':today})
+
+# def card(request):
+#     today = datetime.now()
+#     card_img = card_promotion.objects.all()
+#     return render(request, 'includes/card.html', {'today':today, 'card_promotion':card_img})

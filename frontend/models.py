@@ -15,7 +15,7 @@ image_thumb.allow_tags = True
 class card_promotion(models.Model):
     title = models.CharField(max_length=120)
     description = models.TextField()
-    card_img = models.ImageField()
+    card_img = models.ImageField(null = True, blank = True, upload_to = 'card-img')
     create_date = models.DateTimeField()
 
 def card_thumb(self):
